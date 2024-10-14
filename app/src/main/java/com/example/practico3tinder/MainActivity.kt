@@ -1,6 +1,7 @@
 package com.example.practico3tinder
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel
@@ -73,7 +74,14 @@ class MainActivity : AppCompatActivity() {
             }
             mostrarCafeteria(contadorDeCafeterias)
         }
-        //HAcer aqui el me gusta
+        btnMeGusta.setOnClickListener {
+            contadorDeCafeterias++
+            if (contadorDeCafeterias >= cafeterias.size){
+                contadorDeCafeterias = 0
+            }
+            mostrarCafeteria(contadorDeCafeterias)
+            Toast.makeText(this, "Cafetería Guardada.", Toast.LENGTH_SHORT).show()
+        }
     }
     private fun mostrarCafeteria(cafeteria: Int) {
         carousel.setData(cafeterias[cafeteria])

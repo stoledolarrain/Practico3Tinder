@@ -25,6 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="549dp"
         app:carouselGravity="CENTER"
+        app:showNavigationButtons="false"
+        app:showBottomShadow="false"
         />
 
     <LinearLayout
